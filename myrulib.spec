@@ -1,7 +1,7 @@
 Summary:        E-Book Library Manager
 Name:           myrulib
 Version:        0.28.9
-Release:        1%{?dist}.R
+Release:        2%{?dist}.R
 
 License:        GPLv3
 URL:            http://myrulib.lintest.ru
@@ -29,7 +29,6 @@ This package includes built-in CoolReader3 engine.
 %configure \
             --with-expat \
             --with-icu \
-            --with-reader \
             --with-strip
 
 make LDFLAGS="-Wl,--add-needed" %{?_smp_mflags}
@@ -66,5 +65,8 @@ gtk-update-icon-cache /usr/share/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Tue Oct 18 2011 Arkady L. Shane <ashejn@russianfedora.ru> - 0.28.9-2.R
+- build without reader
+
 * Fri Oct  7 2011 Arkady L. Shane <ashejn@russianfedora.ru> - 0.28.9-1.R
 - initial build
