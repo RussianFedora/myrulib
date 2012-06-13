@@ -1,7 +1,7 @@
 Summary:        E-Book Library Manager
 Name:           myrulib
-Version:        0.28.9
-Release:        2%{?dist}.R
+Version:        0.29.8
+Release:        1%{?dist}
 
 License:        GPLv3
 URL:            http://myrulib.lintest.ru
@@ -65,6 +65,9 @@ gtk-update-icon-cache /usr/share/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Wed Jun 13 2012 Arkady L. Shane <ashejn@russianfedora.ru> - 0.29.8-1.R
+- update to 0.29.8
+
 * Tue Oct 18 2011 Arkady L. Shane <ashejn@russianfedora.ru> - 0.28.9-2.R
 - build without reader
 
