@@ -1,12 +1,12 @@
 Summary:        E-Book Library Manager
 Name:           myrulib
-Version:        0.29.8
+Version:        0.29.14
 Release:        1%{?dist}
 
 License:        GPLv3
 URL:            http://myrulib.lintest.ru
 Group:          Applications/Publishing
-Source0:        http://www.lintest.ru/pub/myrulib-%{version}.tar.bz2
+Source0:        http://www.lintest.ru/pub/%{name}-%{version}.tar.bz2
 
 BuildRequires:  libicu-devel
 BuildRequires:  libjpeg-devel
@@ -35,9 +35,8 @@ make LDFLAGS="-Wl,--add-needed" %{?_smp_mflags}
 
 
 %install
-make DESTDIR=%{buildroot} install
-
-%find_lang myrulib
+%make_install
+%find_lang %{name}
 
 
 %post
@@ -55,16 +54,18 @@ fi
 gtk-update-icon-cache /usr/share/icons/hicolor &>/dev/null || :
 
 
-%files -f myrulib.lang
-%defattr(-,root,root,-)
+%files -f %{name}.lang
 %doc AUTHORS ChangeLog LICENSE README
-%{_bindir}/myrulib
-%{_datadir}/applications/myrulib.desktop
-%{_datadir}/icons/hicolor/*/*/myrulib.png
-%{_datadir}/pixmaps/myrulib.png
+%{_bindir}/%{name}
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/*/*/%{name}.png
+%{_datadir}/pixmaps/%{name}.png
 
 
 %changelog
+* Fri Jul 26 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-1.R
+- update to 0.29.14
+
 * Wed Jun 13 2012 Arkady L. Shane <ashejn@russianfedora.ru> - 0.29.8-1.R
 - update to 0.29.8
 
