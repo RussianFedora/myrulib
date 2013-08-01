@@ -1,7 +1,8 @@
-Summary:        E-Book Library Manager
 Name:           myrulib
 Version:        0.29.14
 Release:        1%{?dist}
+Summary:        E-Book Library Manager
+Summary(ru):    Каталогизатор электронных книг
 
 License:        GPLv3
 URL:            http://myrulib.lintest.ru
@@ -20,6 +21,10 @@ BuildRequires:  gettext
 MyRuLib is an application for organizing your own collection of e-books.
 This package includes built-in CoolReader3 engine.
 
+%description -l ru
+MyRuLib предназначен для организации вашей собственной коллекции электронных
+книг.
+
 
 %prep
 %setup -q
@@ -30,8 +35,7 @@ This package includes built-in CoolReader3 engine.
             --with-expat \
             --with-icu \
             --with-strip
-
-make LDFLAGS="-Wl,--add-needed" %{?_smp_mflags}
+make %{?_smp_mflags}
 
 
 %install
@@ -63,6 +67,10 @@ gtk-update-icon-cache /usr/share/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Thu Aug 01 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-2.R
+- corrected LDFLAGS
+- added russian description
+
 * Fri Jul 26 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-1.R
 - update to 0.29.14
 
