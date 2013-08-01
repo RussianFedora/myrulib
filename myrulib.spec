@@ -1,6 +1,6 @@
 Name:           myrulib
 Version:        0.29.14
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        E-Book Library Manager
 Summary(ru):    Каталогизатор электронных книг
 
