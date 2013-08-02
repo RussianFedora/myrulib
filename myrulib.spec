@@ -67,18 +67,18 @@ gtk-update-icon-cache /usr/share/icons/hicolor &>/dev/null || :
 
 
 %changelog
-* Thu Aug 01 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-2.R
+* Thu Aug 01 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-2
 - corrected LDFLAGS
 - added russian description
 
-* Fri Jul 26 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-1.R
+* Fri Jul 26 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-1
 - update to 0.29.14
 
-* Wed Jun 13 2012 Arkady L. Shane <ashejn@russianfedora.ru> - 0.29.8-1.R
+* Wed Jun 13 2012 Arkady L. Shane <ashejn@russianfedora.ru> - 0.29.8-1
 - update to 0.29.8
 
-* Tue Oct 18 2011 Arkady L. Shane <ashejn@russianfedora.ru> - 0.28.9-2.R
+* Tue Oct 18 2011 Arkady L. Shane <ashejn@russianfedora.ru> - 0.28.9-2
 - build without reader
 
-* Fri Oct  7 2011 Arkady L. Shane <ashejn@russianfedora.ru> - 0.28.9-1.R
+* Fri Oct  7 2011 Arkady L. Shane <ashejn@russianfedora.ru> - 0.28.9-1
 - initial build
