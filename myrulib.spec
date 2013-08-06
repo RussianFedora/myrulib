@@ -1,6 +1,6 @@
 Name:           myrulib
 Version:        0.29.14
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        E-Book Library Manager
 Summary(ru):    Каталогизатор электронных книг
 
@@ -34,7 +34,7 @@ MyRuLib предназначен для организации вашей соб
 %configure \
             --with-expat \
             --with-icu \
-            --with-strip
+            --without-strip
 make %{?_smp_mflags}
 
 
@@ -67,6 +67,9 @@ gtk-update-icon-cache /usr/share/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Tue Aug 06 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-3
+- added debug info
+
 * Thu Aug 01 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-2
 - corrected LDFLAGS
 - added russian description
