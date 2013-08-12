@@ -1,6 +1,6 @@
 Name:           myrulib
 Version:        0.29.14
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        E-Book Library Manager
 Summary(ru):    Каталогизатор электронных книг
 
@@ -9,13 +9,14 @@ URL:            http://myrulib.lintest.ru
 Group:          Applications/Publishing
 Source0:        http://www.lintest.ru/pub/%{name}-%{version}.tar.bz2
 
-BuildRequires:  libicu-devel
 BuildRequires:  libjpeg-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  wxGTK-devel >= 2.8.10
 BuildRequires:  libsqlite3x-devel
 BuildRequires:  expat-devel
 BuildRequires:  gettext
+BuildRequires:  bzip2-devel
+BuildRequires:  desktop-file-utils
 
 %description
 MyRuLib is an application for organizing your own collection of e-books.
@@ -33,8 +34,9 @@ MyRuLib предназначен для организации вашей соб
 %build
 %configure \
             --with-expat \
-            --with-icu \
-            --without-strip
+            --without-icu \
+            --without-strip \
+            --without-sqlite
 make %{?_smp_mflags}
 
 
@@ -42,6 +44,7 @@ make %{?_smp_mflags}
 %make_install
 %find_lang %{name}
 
+desktop-file-validate %buildroot%{_datadir}/applications/%{name}.desktop
 
 %post
 touch --no-create /usr/share/icons/hicolor &>/dev/null || :
@@ -67,6 +70,10 @@ gtk-update-icon-cache /usr/share/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Mon Aug 12 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-4
+- remove bundled libraries
+- validate .desktop file
+
 * Tue Aug 06 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-3
 - added debug info
 
