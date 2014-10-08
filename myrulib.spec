@@ -1,6 +1,6 @@
 Name:           myrulib
-Version:        0.29.14
-Release:        4%{?dist}
+Version:        0.29.16
+Release:        1%{?dist}
 Summary:        E-Book Library Manager
 Summary(ru):    Каталогизатор электронных книг
 
@@ -29,7 +29,16 @@ MyRuLib предназначен для организации вашей соб
 
 %prep
 %setup -q
-
+rm -rf 3rdparty/sqlite3
+rm -rf 3rdparty/bzip2
+rm -rf 3rdparty/bakefile
+#rm -rf 3rdparty/bin2c
+rm -rf 3rdparty/crengine
+rm -rf 3rdparty/expat
+rm -rf 3rdparty/faxpp
+rm -rf 3rdparty/gnome
+#rm -rf 3rdparty/wxbzipstream
+#rm -rf 3rdparty/wxsqlite3
 
 %build
 %configure \
@@ -37,7 +46,8 @@ MyRuLib предназначен для организации вашей соб
             --without-icu \
             --without-strip \
             --without-sqlite
-make %{?_smp_mflags}
+make 
+#%{?_smp_mflags}
 
 
 %install
@@ -70,6 +80,9 @@ gtk-update-icon-cache /usr/share/icons/hicolor &>/dev/null || :
 
 
 %changelog
+* Wed Oct 08 2014 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.16-1
+- Update to 0.29.16
+
 * Mon Aug 12 2013 Vasiliy N. Glazov <vascom2@gmail.com> - 0.29.14-4
 - remove bundled libraries
 - validate .desktop file
